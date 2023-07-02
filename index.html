@@ -9,7 +9,10 @@
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
-      <p>{{ title }} - {{ author }}</p>
+      <p>{{ title }} - {{ author }} - {{ age }}</p>
+      <button v-on:click="age++">Increase age</button>
+      <button @click="age--">Decrease age</button>
+      <br /><button @click="changeTitle('Oathbringer')">Change title</button>
     </div>
 
     <script src="app.js"></script>
