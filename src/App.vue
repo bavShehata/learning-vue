@@ -1,17 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{ title }}</h1>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      title: "my first vue app",
+    };
+  },
+};
 </script>
 
 <style>
@@ -22,5 +21,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  font-size: 48px;
+  color: blue;
 }
 </style>
