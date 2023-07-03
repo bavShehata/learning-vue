@@ -2,7 +2,7 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal">
       <p>Coming from a slot</p>
       <template v-slot:links>
@@ -11,7 +11,7 @@
         <a href="">login</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
   <div v-if="showModalTwo">
     <Modal
       :header="headerTwo"
