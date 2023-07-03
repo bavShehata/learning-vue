@@ -3,7 +3,9 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
   <div v-if="showModal">
-    <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal" />
+    <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal">
+      <p>Coming from a slot</p>
+    </Modal>
   </div>
   <button @click.shift="toggleModal">Open modal (+shift)</button>
 </template>

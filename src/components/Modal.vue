@@ -3,6 +3,7 @@
     <div class="modal">
       <h1>{{ header }}</h1>
       <h2>{{ book[0] }} - {{ book[1] }}</h2>
+      <slot></slot>
     </div>
   </div>
 </template>
