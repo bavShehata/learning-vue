@@ -12,7 +12,22 @@
       </template>
     </Modal>
   </div>
-  <button @click.shift="toggleModal">Open modal (+shift)</button>
+  <div v-if="showModalTwo">
+    <Modal
+      :header="headerTwo"
+      :book="['Title Mine', 'Author Mine']"
+      @close="toggleModalTwo"
+    >
+      <p>Coming from a different slot</p>
+      <template v-slot:links>
+        <a href="">Sign up mine</a>
+        <br />
+        <a href="">login mine</a>
+      </template>
+    </Modal>
+  </div>
+  <button @click.shift="toggleModal">Open modal (shift)</button>
+  <button @click="toggleModalTwo">Open modal Two</button>
 </template>
 
 <script>
@@ -25,7 +40,9 @@ export default {
     return {
       title: "my first vue app",
       header: "Prop header from app.vue ",
+      headerTwo: "Own prop header",
       showModal: false,
+      showModalTwo: false,
     };
   },
   methods: {
@@ -34,6 +51,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 };
