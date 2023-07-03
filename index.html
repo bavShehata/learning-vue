@@ -19,6 +19,8 @@
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
+      <!-- <a v-bind:href="url">Best website ever</a> -->
+      <a :href="url">Best website ever</a>
       <!-- directive v-if removes from DOM while v-show adds display = None in CSS -->
       <div @click="changeVisib">
         <button v-if="showBooks">Hide books</button>
@@ -28,6 +30,7 @@
       <div v-if="showBooks">
         <ul>
           <li v-for="book in books">
+            <img :src="book.img" :alt="book.title" />
             <p>{{ book.title }} - {{ book.author }} - {{ age }}</p>
           </li>
         </ul>
