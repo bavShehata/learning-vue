@@ -1,7 +1,19 @@
 # learning-vue
 
-Adding Vue.js to my toolkit
+## Project setup
+```
+npm install
+```
 
-## Helpful resoruces
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-<a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1">The Net Ninja </a>
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
