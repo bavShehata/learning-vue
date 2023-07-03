@@ -1,10 +1,17 @@
 <template>
   <div class="backdrop">
     <div class="modal">
-      <h1>Modal content</h1>
+      <h1>{{ header }}</h1>
+      <h2>{{ book[0] }} - {{ book[1] }}</h2>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["header", "book"],
+};
+</script>
 
 <style scoped>
 .modal {

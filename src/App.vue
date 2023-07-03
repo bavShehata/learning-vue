@@ -2,7 +2,7 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <Modal />
+  <Modal :header="header" :book="['Title', 'Author']" />
 </template>
 
 <script>
@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       title: "my first vue app",
+      header: "Prop header from app.vue ",
     };
   },
   methods: {
