@@ -5,7 +5,7 @@
   <div v-if="showModal">
     <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal" />
   </div>
-  <button @click="toggleModal">Open modal</button>
+  <button @click.shift="toggleModal">Open modal (+shift)</button>
 </template>
 
 <script>
