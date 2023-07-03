@@ -5,6 +5,8 @@ const app = Vue.createApp({
       title: "The final empire",
       author: "Brandom Sanerson",
       age: 45,
+      x: 0,
+      y: 0,
     };
   },
   methods: {
@@ -14,6 +16,14 @@ const app = Vue.createApp({
     },
     changeVisib() {
       this.showBooks = !this.showBooks;
+    },
+    handleEvent(e, data) {
+      console.log(e.type, e);
+      if (data) console.log("Data: ", data);
+    },
+    handleMousemove(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     },
   },
 });
