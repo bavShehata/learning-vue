@@ -19,14 +19,18 @@
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
-      <!-- v-if removes from DOM while v-show adds display = None in CSS -->
+      <!-- directive v-if removes from DOM while v-show adds display = None in CSS -->
       <div @click="changeVisib">
         <button v-if="showBooks">Hide books</button>
         <button v-else>Show books</button>
       </div>
       <br />
       <div v-if="showBooks">
-        <p>{{ title }} - {{ author }} - {{ age }}</p>
+        <ul>
+          <li v-for="book in books">
+            <p>{{ book.title }} - {{ book.author }} - {{ age }}</p>
+          </li>
+        </ul>
         <button v-on:click="age++">Increase age</button>
         <button @click="age--">Decrease age</button>
         <br /><button @click="changeTitle('Oathbringer')">Change title</button>
