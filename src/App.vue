@@ -5,6 +5,11 @@
   <div v-if="showModal">
     <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal">
       <p>Coming from a slot</p>
+      <template v-slot:links>
+        <a href="">Sign up</a>
+        <br />
+        <a href="">login</a>
+      </template>
     </Modal>
   </div>
   <button @click.shift="toggleModal">Open modal (+shift)</button>
