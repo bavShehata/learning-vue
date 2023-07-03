@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click="closeModal">
     <div class="modal">
       <h1>{{ header }}</h1>
       <h2>{{ book[0] }} - {{ book[1] }}</h2>
@@ -10,6 +10,11 @@
 <script>
 export default {
   props: ["header", "book"],
+  methods: {
+    closeModal() {
+      this.$emit("close");
+    },
+  },
 };
 </script>
 

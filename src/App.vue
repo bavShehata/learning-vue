@@ -2,7 +2,10 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <Modal :header="header" :book="['Title', 'Author']" />
+  <div v-if="showModal">
+    <Modal :header="header" :book="['Title', 'Author']" @close="toggleModal" />
+  </div>
+  <button @click="toggleModal">Open modal</button>
 </template>
 
 <script>
@@ -15,11 +18,15 @@ export default {
     return {
       title: "my first vue app",
       header: "Prop header from app.vue ",
+      showModal: false,
     };
   },
   methods: {
     handleClick() {
       console.log(this.$refs.name);
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
