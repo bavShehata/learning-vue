@@ -44,6 +44,13 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
     },
+    toggleFav(book) {
+      //   var i = -1;
+      //   node = e.currentTarget;
+      //   for (; (node = node.previousSibling); i++);
+      //   this.books[i].isFav = !this.books[i].isFav;
+      book.isFav = !book.isFav;
+    },
   },
 });
 
