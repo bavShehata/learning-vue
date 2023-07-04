@@ -5,6 +5,7 @@
   </div>
   <div v-if="showResults">
     <Results :reactionTime="reactionTime" />
+    <button class="retry" @click="init">Try again</button>
   </div>
 </template>
 
@@ -21,7 +22,7 @@ export default {
       startTime: 0,
       endTime: 0,
       reactionTime: 0,
-      timeTillShow: Math.floor(Math.random() * 3000),
+      timeTillShow: 0,
     };
   },
   components: { Block, Results },
@@ -31,13 +32,19 @@ export default {
       this.reactionTime = this.endTime - this.startTime;
       this.showResults = true;
     },
+    init() {
+      this.showBlock = false;
+      this.showResults = false;
+      this.timeTillShow = Math.floor(Math.random() * 3000);
+      console.log("Timetillshow: ", this.timeTillShow);
+      this.timer = setTimeout(() => {
+        this.showBlock = true;
+        this.startTime = new Date();
+      }, this.timeTillShow);
+    },
   },
   mounted: function () {
-    console.log("Timetillshow: ", this.timeTillShow);
-    this.timer = setTimeout(() => {
-      this.showBlock = true;
-      this.startTime = new Date();
-    }, this.timeTillShow);
+    this.init();
   },
 };
 </script>
@@ -50,5 +57,11 @@ export default {
   text-align: center;
   color: #444;
   margin-top: 60px;
+}
+.retry {
+  padding: 10px 30px;
+  width: 80;
+  background-color: cadetblue;
+  color: white;
 }
 </style>
