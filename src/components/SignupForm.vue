@@ -74,6 +74,10 @@ export default {
         this.password.length > 5
           ? ""
           : "Passwor should be more than 5 characters";
+      if (!this.passwordError) {
+        console.log("Email: ", this.email);
+        console.log("Password: ", this.password);
+      }
     },
   },
 };
