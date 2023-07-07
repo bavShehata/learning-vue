@@ -9,8 +9,25 @@
       <option value="developer">Web Developer</option>
       <option value="designer">Web Designer</option>
     </select>
+    <div class="terms">
+      <input type="checkbox" required v-model="terms" />
+      <label>ToC</label>
+    </div>
+
+    <div>
+      <input type="checkbox" value="Shaun" v-model="names" />
+      <label>Shaun</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Bavly" v-model="names" />
+      <label>Bavly</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Mario" v-model="names" />
+      <label>Mario</label>
+    </div>
   </form>
-  <p>{{ email }} - {{ password }} - {{ role }}</p>
+  <p>{{ email }} - {{ password }} - {{ role }} - {{ terms }} - {{ names }}</p>
 </template>
 
 <script>
@@ -20,6 +37,8 @@ export default {
       email: "",
       password: "",
       role: "designer",
+      terms: "",
+      names: ["Shaun", "Mario"],
     };
   },
 };
@@ -27,37 +46,66 @@ export default {
 
 <style>
 form {
-  background: linear-gradient(45deg, rgb(225, 225, 225), rgb(215, 215, 215));
-  width: 450px;
+  max-width: 420px;
+  margin: 30px auto;
+  background: white;
   text-align: left;
-  margin: 0 auto;
-  padding: 3rem;
-  display: inline-block;
-  border-radius: 16px;
+  padding: 40px;
+  border-radius: 10px;
 }
-
 label {
-  font-size: large;
-  text-transform: uppercase;
-  color: #999;
-  font-weight: bold;
-  letter-spacing: 2px;
+  color: #aaa;
   display: inline-block;
-  margin-bottom: 0.3rem;
+  margin: 25px 0 15px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
-
 input,
 select {
-  background-color: rgb(235, 235, 235);
   display: block;
-  box-sizing: border-box;
+  padding: 10px 6px;
   width: 100%;
-  margin-bottom: 1.2rem;
+  box-sizing: border-box;
   border: none;
-  padding: 1.5rem 6px;
-  font-size: 2rem;
-  color: #888;
-  border-radius: 16px;
-  box-shadow: 0 4px 3px 0px rgb(182, 182, 182);
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
+}
+.pill {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
+}
+button {
+  background: #0b6dff;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+}
+.submit {
+  text-align: center;
+}
+.error {
+  color: #ff0062;
+  margin-top: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 </style>
