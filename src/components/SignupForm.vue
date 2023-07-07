@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label for="email">Email:</label>
     <input type="email" required v-model="email" />
     <label for="password">Password:</label>
@@ -32,6 +32,9 @@
       <input type="checkbox" value="Mario" v-model="names" />
       <label>Mario</label>
     </div>
+    <div class="submit">
+      <button>Create account</button>
+    </div>
   </form>
   <p>{{ email }} - {{ password }} - {{ role }} - {{ terms }} - {{ names }}</p>
   <p>{{ tempSkill }} - {{ skills }}</p>
@@ -62,6 +65,9 @@ export default {
     removeSkill(e, skill) {
       const index = this.skills.indexOf(skill);
       this.skills.splice(index, 1); // 2nd parameter means remove one item only
+    },
+    handleSubmit(e) {
+      console.log("form submitted");
     },
   },
 };
