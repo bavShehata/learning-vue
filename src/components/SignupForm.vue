@@ -13,7 +13,7 @@
     <label for="">Skills:</label>
     <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
     <div v-for="skill in skills" :key="skill" class="pill">
-      <li>{{ skill }}</li>
+      <li @click="removeSkill(skill)">{{ skill }}</li>
     </div>
     <div class="terms">
       <input type="checkbox" required v-model="terms" />
@@ -58,6 +58,10 @@ export default {
         }
         this.tempSkill = "";
       }
+    },
+    removeSkill(e, skill) {
+      const index = this.skills.indexOf(skill);
+      this.skills.splice(index, 1); // 2nd parameter means remove one item only
     },
   },
 };
