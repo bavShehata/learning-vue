@@ -32,6 +32,7 @@
       <input type="checkbox" value="Mario" v-model="names" />
       <label>Mario</label>
     </div>
+    <p class="error">{{ passwordError }}</p>
     <div class="submit">
       <button>Create account</button>
     </div>
@@ -51,6 +52,7 @@ export default {
       names: ["Shaun", "Mario"],
       tempSkill: "",
       skills: [],
+      passwordError: "",
     };
   },
   methods: {
@@ -67,7 +69,11 @@ export default {
       this.skills.splice(index, 1); // 2nd parameter means remove one item only
     },
     handleSubmit(e) {
-      console.log("form submitted");
+      //validate password
+      this.passwordError =
+        this.password.length > 5
+          ? ""
+          : "Passwor should be more than 5 characters";
     },
   },
 };
