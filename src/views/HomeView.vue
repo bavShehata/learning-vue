@@ -1,32 +1,8 @@
 <template>
   <div class="home">
-    <h1>homepage</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestias
-      corporis ea, culpa deleniti repudiandae quis numquam cumque ullam
-      veritatis minima veniam quibusdam ducimus aliquam nihil labore non quia
-      suscipit eligendi? Porro ut repudiandae possimus harum itaque
-      necessitatibus quae voluptatum consectetur illum vitae repellendus ullam
-      eum saepe praesentium quasi aut, ratione fugiat! Voluptatum nesciunt porro
-      est culpa nulla, non consequatur ab veniam labore quam, quod asperiores
-      necessitatibus at. Dolorem porro et, quae natus officia debitis non
-      dolorum soluta nostrum nisi odio quam accusamus nulla corrupti
-      voluptatibus iusto, minima libero cum error ducimus! Natus saepe,
-      obcaecati voluptates totam nulla aperiam amet.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestias
-      corporis ea, culpa deleniti repudiandae quis numquam cumque ullam
-      veritatis minima veniam quibusdam ducimus aliquam nihil labore non quia
-      suscipit eligendi? Porro ut repudiandae possimus harum itaque
-      necessitatibus quae voluptatum consectetur illum vitae repellendus ullam
-      eum saepe praesentium quasi aut, ratione fugiat! Voluptatum nesciunt porro
-      est culpa nulla, non consequatur ab veniam labore quam, quod asperiores
-      necessitatibus at. Dolorem porro et, quae natus officia debitis non
-      dolorum soluta nostrum nisi odio quam accusamus nulla corrupti
-      voluptatibus iusto, minima libero cum error ducimus! Natus saepe,
-      obcaecati voluptates totam nulla aperiam amet.
-    </p>
+    <h1>Homepage</h1>
+    <p>My name is {{ name }}. I am {{ age }} years old</p>
+    <button @click="handleClick">Click me</button>
   </div>
 </template>
 
@@ -34,5 +10,18 @@
 export default {
   name: "HomeView",
   components: {},
+  setup() {
+    let name = "bavly";
+    let age = 22;
+
+    const handleClick = () => {
+      console.log("Clicked");
+    };
+    return {
+      name,
+      age,
+      handleClick,
+    };
+  },
 };
 </script>
