@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ComputedView from "../views/ComputedView.vue";
+import PropsView from "../views/PropsView.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/computed",
     name: "computed",
     component: ComputedView,
+  },
+  {
+    path: "/props",
+    name: "props",
+    component: PropsView,
   },
 ];
 
