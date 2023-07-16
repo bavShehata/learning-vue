@@ -16,7 +16,10 @@ export default {
     const posts = ref(props.posts);
     onMounted(() => console.log("Component mounted"));
     onUnmounted(() => console.log("Component unmounted"));
-    onUpdated(() => console.log("Component Updated"));
+    onUpdated(() => {
+      console.log("Component Updated");
+      posts.value = props.posts;
+    });
     return {
       posts,
     };
