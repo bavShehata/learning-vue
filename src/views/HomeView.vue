@@ -3,6 +3,7 @@
     <h1>Homepage</h1>
     <p ref="p">My name is {{ name }}. I am {{ age }} years old</p>
     <button @click="handleClick">Click me</button>
+    <input type="text" v-model="name" />
   </div>
 </template>
 
@@ -13,13 +14,13 @@ export default {
   name: "HomeView",
   components: {},
   setup() {
-    let name = "bavly";
-    let age = 22;
+    const name = ref("bavly");
+    const age = ref(22);
 
     const p = ref(null);
 
     const handleClick = () => {
-      console.log(p.value);
+      name.value = "Mario";
     };
     return {
       name,
