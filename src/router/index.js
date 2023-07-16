@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ComputedView from "../views/ComputedView.vue";
 import PropsView from "../views/PropsView.vue";
+import Details from "../views/Details.vue";
 
 const routes = [
   {
@@ -18,6 +19,12 @@ const routes = [
     path: "/props",
     name: "props",
     component: PropsView,
+  },
+  {
+    path: "/posts/:id",
+    name: "Details",
+    component: Details,
+    props: true,
   },
 ];
 

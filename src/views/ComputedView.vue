@@ -2,7 +2,7 @@
   <h1>Computed</h1>
   <input type="text" v-model="search" />
   <p>Search term: {{ search }}</p>
-  <div v-for="name in matchingNames" key="name">
+  <div v-for="name in matchingNames" :key="name">
     <p>{{ name }}</p>
   </div>
   <button @click="stopWatching">Stop watching</button>
@@ -23,8 +23,8 @@ export default {
       console.log("Watch effect ran", search.value);
     });
     const stopWatching = () => {
-      stopwatch(    );
-      stopwatchEffect(  );
+      stopwatch();
+      stopwatchEffect();
     };
     const matchingNames = computed(() => {
       return names.value.filter((name) => name.includes(search.value));
