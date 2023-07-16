@@ -1,6 +1,8 @@
 <template>
   <h1>props</h1>
-  <PostList :posts="posts" />
+  <button @click="togglePosts">Toggle posts</button>
+  <button @click="posts.pop()">Delete post</button>
+  <PostList :posts="posts" v-if="showPosts" />
 </template>
 <script>
 import PostList from "../components/PostsList.vue";
@@ -14,8 +16,15 @@ export default {
       { title: "blog2", description: "blog2 desc", id: 1 },
     ]);
 
+    const showPosts = ref(true);
+
+    const togglePosts = () => {
+      showPosts.value = !showPosts.value;
+    };
     return {
       posts,
+      showPosts,
+      togglePosts,
     };
   },
 };

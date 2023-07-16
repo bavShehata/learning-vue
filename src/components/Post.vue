@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ post.title }}</h2>
+  <h3>{{ post.title }}</h3>
   <h4>{{ post.description }}</h4>
 </template>
 <script>
@@ -10,6 +10,7 @@ export default {
 
   setup(props) {
     const post = ref(props.post);
+
     return {
       post,
     };
