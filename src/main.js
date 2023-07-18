@@ -1,9 +1,6 @@
-import Vue from "vue";
-import App from "./App.vue";
-import store from "./store/Store";
+import './assets/main.css'
 
-new Vue({
-  store: store,
-  el: "#app",
-  render: (h) => h(App),
-});
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
